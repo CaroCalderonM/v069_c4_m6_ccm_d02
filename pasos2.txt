@@ -1,0 +1,46 @@
+Comandos previos en la Terminal para comenzar con Django
+---------------------------------------------------------
+
+1.- python --version    //para revisar la verisón de Python que tenemos
+
+2.- pip -- version      // Para revisar la versión de paquetes de Python que tenemos instalados
+
+3.- python -m pip install Django==5.1.2  //Para instalar la última versión de django
+                                     // Se tiene en https://www.djangoproject.com/download/
+
+COMENZAMOS CON EL ENTORNO VIRTUAL 
+----------------------------------
+
+4.- python.exe -m venv venv      //CREAMOS el entorno virtual
+                                 //El segundo venv se podría llamar de otra manera
+
+5.- .\venv\Scripts\activate     // ACTIVAMOS el entorno virtual
+
+6.- python -m pip install Django==5.1.2  //SIEMPRE volvemos a instalar Django, pero dentro del (venv)
+
+7.- django-admin startproject primer_ejemplo  //SIEMPRE que vamos a crear un proyecto, debemos crearlo a la misma altura que carpeta venv
+
+8.- cd .\primer_ejemplo\  // Ingresamos a la carpeta que contiene manage.py
+    previa y posteriormente, podemos verificar con el comando ls
+
+9.- mkdir static  //Creamos esta carpeta al mismo nivel de manage.py
+
+10.- python manage.py runserver // Ejecutamos para levantar el enlace WEB de visualización del proyecto
+     CTRL + C para bajar el servidor.
+
+11.- py.exe .\manage.py migrate // Ejecutamos las migraciones para completar las actualizaciones en la BASE_DIR
+     py.exe .\manage.py make migrations // actualiza las migraciones
+
+================================================================
+HASTA AQUÍ ES LO BÁSICO QUE SE DEBE HACER EN TODOS LOS PROYECTOS
+================================================================
+Una vez que ya tenemos el proyecto funcionando con todas las aplicaciones,
+crearemos el archivo requirements.txt estando en (venv).
+
+12.- .gitignore   //Crear este archivo en la carpeta del proyecto 
+                  //y colocarle venv dentro para que esta carpeta no la suba al Github
+
+13.- pip freeze > requirements.txt  //lo ejecutamos al final del proyecto para dejar constancia de lo que se ha ocupado.
+
+14.- pip install -r requirements.txt //lo usaremos para restaurar y reinstalar un proyecto que vayamos a usar creando el venv
+                                     // esto porque venv no se sube a github
